@@ -17,3 +17,7 @@ resource "aws_s3_bucket" "b" {
     Environment = "Dev"
   }
 }
+terraform init
+terraform plan
+terraform apply
+terraform destroy
