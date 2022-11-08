@@ -1,0 +1,28 @@
+
+pipeline {
+    agent any
+    stages {
+        stage ("Git checkout"){
+            steps {
+                git branch: "master",
+                    url: "https://github.com/iamdkcoder/CI-CD-PIPELINE.git"
+                sh "ls"
+            }
+        }
+        
+        stage ("Unit Test"){
+            steps{
+                sh "python3 dkcode.py"
+            }
+        }
+        stage ("sonar-publish"){
+            steps {
+                withSonarQubeEnv("sonarqube") {
+                echo "=========== Performing Sonar Scan ============"
+                sh "${tool("scannerHome")}/bin/sonar-scanner"
+            }
+            }
+        }
+        
+    }
+}
