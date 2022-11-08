@@ -1,7 +1,7 @@
 # Git
 provider "aws" {
-access_key = "AKIAZDPOWYAEYKHNSHON"
-secret_key = "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"
+access_key = ""
+secret_key = ""
 region = "us-west-1"
 }
 
