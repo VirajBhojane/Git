@@ -1,3 +1,14 @@
+pipeline using maven:
+Global Tool configuration/addmaven
+maven project,branch-main
+create pipeline using script
+manage node/create node
+name, 2-executor,remote root directory,label-slave, custom workdir path
+Configure global security(agent-random,shh-random)
+create directory,download and copy agent folder in it, copy script and paste it in terminal,
+create freestyle project -restrict -label name
+create pipeline- agent {label "slave"}
+Selenium:
 choice parameters:XML:testng.xml and testng1.xml,
                       Browser:Chrome,IE,Firefox,
                       URL:www.google.co.in/
