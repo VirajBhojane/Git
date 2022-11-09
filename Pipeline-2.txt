@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Code'){
+            steps {
+                echo 'This is build phase'
+            }
+        }
+        
+        stage('Build'){
+            steps {
+                input('Do you want to continue')
+            }
+        }
+        
+        stage('integrate'){
+            when {
+                not {
+                    branch 'master'
+                }
+            }
+            
+            steps {
+                echo 'Integratiion is done'
+            }
+        }
+        stage('test') {
+            parallel {
+               stage('Unit test') {
+                   steps {
+                       echo "test done"
+                   }
+               }
+               stage('integration test') {
+                   steps {
+                       echo "running integration"
+                   }
+               }
+            }
+        }
+    
+    }
+}
