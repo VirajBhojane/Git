@@ -1,0 +1,4 @@
+choice parameters:XML:testng.xml and testng1.xml,
+                      Browser:Chrome,IE,Firefox,
+                      URL:www.google.co.in/
+Goals and Options:clean install -DxmlFiles=$XML -Dbrowser=$Browser -Durl=$URL
